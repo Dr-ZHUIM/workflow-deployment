@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@master
       - run: |
           npm i 
-          npm run b uild
+          npm run build
           tar -zcvf release.tgz dist
 
       - name: Create Release
