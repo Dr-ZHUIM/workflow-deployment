@@ -20,11 +20,11 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@master
+        uses: actions/create-release@latest
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: Release ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
