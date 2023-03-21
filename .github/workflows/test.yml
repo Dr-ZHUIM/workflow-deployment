@@ -13,8 +13,7 @@ jobs:
 
       - name: Build
         uses: actions/setup-node@master
-        run:
-      - ru n: |
+      - run: |
           np m i 
           npm run b uild
           tar -zcvf release.tgz dist
@@ -39,7 +38,7 @@ jobs:
           upload_url: ${{ steps.create_release.secret.outputs.upload_url }}
           asset_path: "./release.tgz"
           asset_name: release.tgz
-          asset_content_type: appln/x-tgz
+          asset_content_type: application/x-tgz
 
       # - name: Deployment
       #   uses: appleboy/ssh-actions
