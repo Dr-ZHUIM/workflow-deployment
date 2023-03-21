@@ -2,7 +2,7 @@ name: Deploy Test
 on:
   push:
     tags:
-      - "v.*"
+      - "v*"
 
 jobs:
   build-and-deploy:
