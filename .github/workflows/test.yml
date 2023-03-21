@@ -13,10 +13,10 @@ jobs:
 
       - name: Build
         uses: actions/setup-node@master
-        run: |
-        npm i 
-        npm run build
-        tar -zcvf release.tgz dist
+      - run: |
+         npm i 
+         npm run build
+         tar -zcvf release.tgz dist
 
       - name: Create Release
         id: create_release
