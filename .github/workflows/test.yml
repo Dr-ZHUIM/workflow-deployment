@@ -2,7 +2,7 @@ name: Deploy Test
 on:
   push:
     tags:
-      - "v*"
+      - "v.*"
 
 jobs:
   build-and-deploy:
@@ -13,10 +13,11 @@ jobs:
 
       - name: Build
         uses: actions/setup-node@master
-      - run: |
-         npm i 
-         npm run build
-         tar -zcvf release.tgz dist
+        run:
+      - ru n: |
+          np m i 
+          npm run b uild
+          tar -zcvf release.tgz dist
 
       - name: Create Release
         id: create_release
@@ -38,7 +39,7 @@ jobs:
           upload_url: ${{ steps.create_release.secret.outputs.upload_url }}
           asset_path: "./release.tgz"
           asset_name: release.tgz
-          asset_content_type: application/x-tgz
-      
+          asset_content_type: appln/x-tgz
+
       # - name: Deployment
       #   uses: appleboy/ssh-actions
