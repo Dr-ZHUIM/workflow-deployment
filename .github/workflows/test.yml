@@ -14,7 +14,7 @@ jobs:
       - name: Build
         uses: actions/setup-node@master
       - run: |
-          np m i 
+          npm i 
           npm run b uild
           tar -zcvf release.tgz dist
 
